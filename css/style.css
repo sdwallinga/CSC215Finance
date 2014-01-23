@@ -1,13 +1,22 @@
 /* Stylesheet for Financial Services page, written by Sam Wallinga for CSC215, Winter 2014 */
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
-body {
-    background: linear-gradient(#fff, #ccc);
-    background-size: 100%;
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -30px;
+  padding: 0 0 0px;
+}
 
+#footer {
+  height: 30px;
+  background-color: #f5f5f5;
+  text-align: center;
 }
 
 #calculator {
@@ -18,6 +27,14 @@ body {
     padding: 20px 20px 9px;
 }
 
+.jumbotron p {
+    font-style: italic;
+}
+
+.jumbotron {
+    position: relative;
+    z-index: 3;
+}
 
 .top span.clear {
     float: left;
