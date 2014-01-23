@@ -74,106 +74,100 @@
             </nav>
 
             <div class="container narrow">
-                <div class="container narrow">
-                    <div class="jumbotron">
-                        <h1>Welcome to Decent.</h1>
-                        <p>Take more control of your money.</p>
-                        <p><a class="btn btn-primary btn-lg" href="http://www.google.com">Learn more &raquo;</a></p>
+                <div class="jumbotron">
+                    <h1>Welcome to Decent.</h1>
+                    <p>Take more control of your money.</p>
+                    <p><a class="btn btn-primary btn-lg" href="http://www.google.com">Learn more &raquo;</a></p>
+                </div>
+            </div>
+
+            <!-- Page content starts here! -->
+
+            <!-- Tells where the calculator can be found. -->
+            <div class="container narrow" id="panelwrapper">
+                <div class="panel panel-default">
+                    <div class="panel body">
+                        Need to do some simple math? We've got you covered. Click the dropdown in the top right corner of your page.
                     </div>
                 </div>
 
-                <!-- Page content starts here! -->
+                <!-- Loan Repayment Calculator -->
+                <div class="panel panel-default">
+                    <form class="form-horizontal">
+                        <fieldset>
 
-                <!-- Tells where the calculator can be found. -->
-                <div class="container narrow" id="panelwrapper">
-                    <div class="panel panel-default">
-                        <div class="panel body">
-                            Need to do some simple math? We've got you covered. Click the dropdown in the top right corner of your page.
-                        </div>
-                    </div>
+                            <!-- Form Name -->
+                            <legend>Loan Repayment Calculator</legend>
 
-                    <!-- Loan Repayment Calculator -->
-                    <div class="container narrow">
-                        <div class="panel panel-default">
-                            <form class="form-horizontal">
-                                <fieldset>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="ratetext">Current Prime Rate</label>
+                                <div class="col-md-2">
+                                    <input id="ratetext" name="ratetext" type="text" placeholder="%" class="form-control input-md">
 
-                                    <!-- Form Name -->
-                                    <legend>Loan Repayment Calculator</legend>
+                                </div>
+                            </div>
 
-                                    <!-- Text input-->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="ratetext">Current Prime Rate</label>
-                                        <div class="col-md-2">
-                                            <input id="ratetext" name="ratetext" type="text" placeholder="%" class="form-control input-md">
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="loantypeselect">Loan Type</label>
+                                <div class="col-md-2">
+                                    <select id="loantypeselect" name="loantypeselect" class="form-control">
+                                        <option value="1">Residential</option>
+                                        <option value="2">Commercial</option>
+                                        <option value="3">Farm</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                                        </div>
-                                    </div>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="durationinput">Loan Duration</label>
+                                <div class="col-md-2">
+                                    <input id="durationinput" name="durationinput" type="text" placeholder="Years" class="form-control input-md">
 
-                                    <!-- Select Basic -->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="loantypeselect">Loan Type</label>
-                                        <div class="col-md-2">
-                                            <select id="loantypeselect" name="loantypeselect" class="form-control">
-                                                <option value="1">Residential</option>
-                                                <option value="2">Commercial</option>
-                                                <option value="3">Farm</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                </div>
+                            </div>
 
-                                    <!-- Text input-->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="durationinput">Loan Duration</label>
-                                        <div class="col-md-2">
-                                            <input id="durationinput" name="durationinput" type="text" placeholder="Years" class="form-control input-md">
+                            <!-- Multiple Radios (inline) -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="freqradios">Payment Frequency</label>
+                                <div class="col-md-4">
+                                    <label class="radio-inline" for="freqradios-0">
+                                        <input type="radio" name="freqradios" id="freqradios-0" value="1" checked="checked">
+                                        Monthly
+                                    </label>
+                                    <label class="radio-inline" for="freqradios-1">
+                                        <input type="radio" name="freqradios" id="freqradios-1" value="2">
+                                        Bi-Weekly
+                                    </label>
+                                </div>
+                            </div>
 
-                                        </div>
-                                    </div>
+                            <!-- Button -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="calcbutton"></label>
+                                <div class="col-md-4">
+                                    <button id="calcbutton" name="calcbutton" class="btn btn-primary">Calculate</button>
+                                </div>
+                            </div>
 
-                                    <!-- Multiple Radios (inline) -->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="freqradios">Payment Frequency</label>
-                                        <div class="col-md-4">
-                                            <label class="radio-inline" for="freqradios-0">
-                                                <input type="radio" name="freqradios" id="freqradios-0" value="1" checked="checked">
-                                                Monthly
-                                            </label>
-                                            <label class="radio-inline" for="freqradios-1">
-                                                <input type="radio" name="freqradios" id="freqradios-1" value="2">
-                                                Bi-Weekly
-                                            </label>
-                                        </div>
-                                    </div>
+                            <!-- Results field -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="paymentlabel">Your Payment</label>
+                                <div class="col-md-2">
+                                    <input id="paymentlabel" name="paymentlabel" type="text" placeholder="" class="form-control input-md" readonly>
+                                </div>
+                            </div>
 
-                                    <!-- Button -->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="calcbutton"></label>
-                                        <div class="col-md-4">
-                                            <button id="calcbutton" name="calcbutton" class="btn btn-primary">Calculate</button>
-                                        </div>
-                                    </div>
+                        </fieldset>
+                    </form>
+                </div>
 
-                                    <!-- Results field -->
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="paymentlabel">Your Payment</label>
-                                        <div class="col-md-2">
-                                            <input id="paymentlabel" name="paymentlabel" type="text" placeholder="" class="form-control input-md" readonly>
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Dummy paragraph in lieu of content -->
-                    <div class="container narrow">
-                        <div class="panel panel-default">
-                            <div class="panel body">
-                                Raw denim slow-carb kogi aliquip banh mi, irure laboris velit 3 wolf moon 90's trust fund keytar American Apparel. Hashtag dreamcatcher meggings vegan post-ironic, 3 wolf moon Carles chillwave cornhole hoodie chambray. Culpa odio kitsch, lo-fi lomo hashtag pariatur leggings butcher hoodie qui Vice Etsy sint. Letterpress tofu fap ad synth single-origin coffee. Polaroid distillery seitan, DIY quinoa 3 wolf moon incididunt tousled squid wayfarers letterpress viral irony Pinterest. Small batch consequat authentic freegan disrupt adipisicing. Delectus meh XOXO, salvia ethical Tumblr aute sapiente shabby chic.                </div>
-                        </div>
-                    </div>
+                <!-- Dummy paragraph in lieu of content -->
+                <div class="panel panel-default">
+                    <div class="panel body">
+                        Raw denim slow-carb kogi aliquip banh mi, irure laboris velit 3 wolf moon 90's trust fund keytar American Apparel. Hashtag dreamcatcher meggings vegan post-ironic, 3 wolf moon Carles chillwave cornhole hoodie chambray. Culpa odio kitsch, lo-fi lomo hashtag pariatur leggings butcher hoodie qui Vice Etsy sint. Letterpress tofu fap ad synth single-origin coffee. Polaroid distillery seitan, DIY quinoa 3 wolf moon incididunt tousled squid wayfarers letterpress viral irony Pinterest. Small batch consequat authentic freegan disrupt adipisicing. Delectus meh XOXO, salvia ethical Tumblr aute sapiente shabby chic.                </div>
                 </div>
             </div>
 
