@@ -93,11 +93,20 @@
 
                 <!-- Loan Repayment Calculator -->
                 <div class="panel panel-default">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" id="loanform">
                         <fieldset>
 
                             <!-- Form Name -->
                             <legend>Loan Repayment Calculator</legend>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="amttext">Principal Amount</label>
+                                <div class="col-md-2">
+                                    <input id="amttext" name="amttext" type="text" placeholder="$" class="form-control input-md">
+
+                                </div>
+                            </div>
 
                             <!-- Text input-->
                             <div class="form-group">
@@ -113,9 +122,9 @@
                                 <label class="col-md-4 control-label" for="loantypeselect">Loan Type</label>
                                 <div class="col-md-2">
                                     <select id="loantypeselect" name="loantypeselect" class="form-control">
-                                        <option value="1">Residential</option>
-                                        <option value="2">Commercial</option>
-                                        <option value="3">Farm</option>
+                                        <option value="0">Residential</option>
+                                        <option value="1">Commercial</option>
+                                        <option value="2">Farm</option>
                                     </select>
                                 </div>
                             </div>
@@ -124,7 +133,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label" for="durationinput">Loan Duration</label>
                                 <div class="col-md-2">
-                                    <input id="durationinput" name="durationinput" type="text" placeholder="Years" class="form-control input-md">
+                                    <input id="durationtext" name="durationinput" type="text" placeholder="Years" class="form-control input-md">
 
                                 </div>
                             </div>
@@ -134,11 +143,11 @@
                                 <label class="col-md-4 control-label" for="freqradios">Payment Frequency</label>
                                 <div class="col-md-4">
                                     <label class="radio-inline" for="freqradios-0">
-                                        <input type="radio" name="freqradios" id="freqradios-0" value="1" checked="checked">
+                                        <input type="radio" name="freqradios" id="freqradios-0" value="12" checked="checked">
                                         Monthly
                                     </label>
                                     <label class="radio-inline" for="freqradios-1">
-                                        <input type="radio" name="freqradios" id="freqradios-1" value="2">
+                                        <input type="radio" name="freqradios" id="freqradios-1" value="26">
                                         Bi-Weekly
                                     </label>
                                 </div>
@@ -162,6 +171,7 @@
 
                         </fieldset>
                     </form>
+                    <p id="disclaimer">Decent Financial provides this tool for estimation purposes only.</p>
                 </div>
 
                 <!-- Dummy paragraph in lieu of content -->
@@ -184,5 +194,6 @@
             <!-- Site-specific js and calculator scripts, written by Sam Wallinga -->
             <script src="js/main.js"></script>
             <script src="js/calculator.js"></script>
+            <script src="js/loanpayment.js"></script>
         </body>
     </html>
