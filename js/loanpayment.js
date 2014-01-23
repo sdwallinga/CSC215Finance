@@ -16,7 +16,6 @@ document.getElementById('calcbutton').onclick = function(e) {
 
   // Number of payments a borrower will make: term * frequency
   var nbrPayments = loanTerm * payFreq;
-  alert('nbr payments: ' + nbrPayments);
 
   // period rate: prime plus type modifier
   var periodRate = primeRate + rateModifiers[loanType];
